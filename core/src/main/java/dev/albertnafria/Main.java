@@ -1,4 +1,4 @@
-package cat.anf;
+package dev.albertnafria;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,7 @@ public class Main {
         //Create the context (Container)
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
         // get numberGenerator bean from context (container)
-        NumberGenerator numberGenerator = context.getBean("numberGenerator", NumberGenerator.class);
+        NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
 
         // call method next() to get a random number
         int number = numberGenerator.next();
@@ -25,7 +25,7 @@ public class Main {
         Game game = context.getBean(Game.class);
 
         //Call reset method
-        game.reset();
+//        game.reset();
 
         // Close context (container)
         context.close();

@@ -1,4 +1,4 @@
-package cat.anf;
+package dev.albertnafria;
 
 public interface NumberGenerator {
 

@@ -1,13 +1,20 @@
-package cat.anf;
+package dev.albertnafria;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
 public class GameImpl implements Game{
     // Constants
     private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
     // Fields
+    @Autowired
     private NumberGenerator numberGenerator;
     private int guessCount = 10;
     private int number;
@@ -18,11 +25,11 @@ public class GameImpl implements Game{
     private boolean validNumberRange = true;
 
     // Constructors
-    public GameImpl(NumberGenerator numberGenerator) {
-        this.numberGenerator = numberGenerator;
-    }
-
-    // Public Methods
+//    public GameImpl(NumberGenerator numberGenerator) {
+//        this.numberGenerator = numberGenerator;
+//    }
+    // Init method
+    @PostConstruct
     @Override
     public void reset() {
         smallest = 0;
@@ -31,9 +38,13 @@ public class GameImpl implements Game{
         biggest = numberGenerator.getMaxNumber();
         number = numberGenerator.next();
         log.debug("The number is {}", number);
-
+    }
+    @PreDestroy
+    public void preDestroy() {
+        log.info("in Game preDestroy()");
     }
 
+    // Public Methods
     @Override
     public int getNumber() {
         return number;
