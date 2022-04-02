@@ -1,7 +1,6 @@
 package dev.albertnafria.console;
 
-import dev.albertnafria.*;
-import dev.albertnafria.config.AppConfig;
+import dev.albertnafria.config.GameConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -14,19 +13,7 @@ public class Main {
         log.info("Guess The Number Game");
 
         //Create the context (Container)
-        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        // get numberGenerator bean from context (container)
-        NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
-
-        // call method next() to get a random number
-        int number = numberGenerator.next();
-        // log generated number
-        log.info("number = {}", number);
-        // get message bean from context (container)
-        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
-        log.info("getMainMessage = {}", messageGenerator.getMainMessage());
-        log.info("getResultMessage = {}", messageGenerator.getResultMessage());
-
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(GameConfig.class);
         // Close context (container)
         context.close();
 
