@@ -7,4 +7,8 @@
 
     <bean id="numberGenerator" class="dev.albertnafria.NumberGeneratorImpl"/>
 
+    <bean id="game" class="dev.albertnafria.GameImpl">
+        <property name="numberGenerator" ref="numberGenerator"/>
+    </bean>
+
 </beans>

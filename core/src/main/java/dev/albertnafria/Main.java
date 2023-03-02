@@ -15,13 +15,19 @@ public class Main {
         // Create context (container)
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
-        // Get the bean from the container
+        // Get the number generator bean from the container
         NumberGenerator numberGenerator = context.getBean("numberGenerator", NumberGenerator.class);
 
         // Call method next() to get a random number
         int number =  numberGenerator.next();
         // Log generated number
         log.info("number = {}", number);
+
+        // Get game bean from context (container)
+        Game game = context.getBean(Game.class);
+
+        // Call reset method
+        game.reset();
 
         // Close context (container)
         context.close();
