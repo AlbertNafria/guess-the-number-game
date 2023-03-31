@@ -1,5 +1,8 @@
-package dev.albertnafria;
+package dev.albertnafria.console;
 
+import dev.albertnafria.AppConfig;
+import dev.albertnafria.MessageGenerator;
+import dev.albertnafria.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
