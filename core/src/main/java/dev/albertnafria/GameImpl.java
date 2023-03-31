@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
 public class GameImpl implements Game {
 
     // Constants
@@ -61,7 +60,7 @@ public class GameImpl implements Game {
     }
 
     @Override
-    public int getSmalles() {
+    public int getSmallest() {
         return smallest;
     }
 

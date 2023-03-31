@@ -8,7 +8,7 @@ public interface Game {
 
     void setGuess(int guess);
 
-    int getSmalles();
+    int getSmallest();
 
     int getBiggest();
 
