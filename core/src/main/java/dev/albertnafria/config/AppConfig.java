@@ -1,10 +1,13 @@
-package dev.albertnafria;
+package dev.albertnafria.config;
 
+import dev.albertnafria.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+@Import(GameConfig.class)
 @ComponentScan(basePackages = "dev.albertnafria")
 public class AppConfig {
 

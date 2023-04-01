@@ -1,5 +1,6 @@
 package dev.albertnafria;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -7,7 +8,9 @@ import java.util.Random;
 public class NumberGeneratorImpl implements NumberGenerator {
     // Fields
     private final Random random = new Random();
-    private int maxNumber = 100;
+    @Autowired
+    @MaxNumber
+    private int maxNumber;
 
     // Public methods
     @Override

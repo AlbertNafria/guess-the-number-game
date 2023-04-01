@@ -1,6 +1,6 @@
 package dev.albertnafria.console;
 
-import dev.albertnafria.AppConfig;
+import dev.albertnafria.config.AppConfig;
 import dev.albertnafria.MessageGenerator;
 import dev.albertnafria.NumberGenerator;
 import org.slf4j.Logger;
